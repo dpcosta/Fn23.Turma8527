@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Novo";
+}
+
+<h1>Novo Post</h1>
+<form action="/Post/Adiciona" method="POST">
+    <div>
+        <label>Título: </label>
+        <input name="titulo" />
+    </div>
+    <div>
+        <label>Resumo: </label>
+        <input name="resumo" />
+    </div>
+    <div>
+        <label>Categoria: </label>
+        <input name="Categoria" />
+    </div>
+    <button>Gravar</button>
+</form>

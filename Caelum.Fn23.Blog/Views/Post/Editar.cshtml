@@ -1,0 +1,25 @@
+﻿@model Caelum.Fn23.Blog.Models.Post
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar Post</h1>
+<form action="/Post/Altera" method="POST">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="hidden" name="DataPublicacao" value="@Model.DataPublicacao" />
+    <input type="hidden" name="Publicado" value="@Model.Publicado.ToString()" />
+    <div>
+        <label>Título: </label>
+        <input name="titulo" value="@Model.Titulo" />
+    </div>
+    <div>
+        <label>Resumo: </label>
+        <input name="resumo" value="@Model.Resumo" />
+    </div>
+    <div>
+        <label>Categoria: </label>
+        <input name="Categoria" value="@Model.Categoria" />
+    </div>
+    <button>Gravar</button>
+</form>

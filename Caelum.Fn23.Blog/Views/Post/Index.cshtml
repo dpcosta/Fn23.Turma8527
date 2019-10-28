@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Posts</h1>
+<a href="/Post/Novo">Novo Post</a>
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Resumo</th>
+            <th>Categoria</th>
+            <th>Publicação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    @foreach (Post post in Model)
+    {
+        <tr>
+            <td>@post.Titulo</td>
+            <td>@post.Resumo</td>
+            <td>@post.Categoria</td>
+            <td>
+                @if (post.Publicado && post.DataPublicacao.HasValue)
+                {
+                    @post.DataPublicacao.Value.ToString("dd/MM/yyyy")
+                } else
+                {
+                    <a href="/Post/Publicar/@post.Id">Publicar</a>
+                }
+            </td>
+            <td>
+                <a href="/Post/Excluir/@post.Id">Excluir</a>
+                &nbsp;
+                <a href="/Post/Editar/@post.Id">Alterar</a>
+            </td>
+        </tr>
+    }
+</table>

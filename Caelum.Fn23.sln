@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caelum.Fn23.PrimeiraWebApp", "Caelum.Fn23.PrimeiraWebApp\Caelum.Fn23.PrimeiraWebApp.csproj", "{53A04AC2-39DA-4074-9B95-E8A4C89B5853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caelum.Fn23.Blog", "Caelum.Fn23.Blog\Caelum.Fn23.Blog.csproj", "{48826C1B-02C6-44B8-91E2-9F9EED90CB1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53A04AC2-39DA-4074-9B95-E8A4C89B5853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A04AC2-39DA-4074-9B95-E8A4C89B5853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A04AC2-39DA-4074-9B95-E8A4C89B5853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A04AC2-39DA-4074-9B95-E8A4C89B5853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48826C1B-02C6-44B8-91E2-9F9EED90CB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48826C1B-02C6-44B8-91E2-9F9EED90CB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48826C1B-02C6-44B8-91E2-9F9EED90CB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48826C1B-02C6-44B8-91E2-9F9EED90CB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF072F0C-F8C8-4A6E-AE6B-7B67F7BEA69D}
+	EndGlobalSection
+EndGlobal
