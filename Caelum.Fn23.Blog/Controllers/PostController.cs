@@ -22,20 +22,28 @@ namespace Caelum.Fn23.Blog.Controllers
         [HttpPost]
         public IActionResult Adiciona(Post novoPost)
         {
-            dao.Incluir(novoPost);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                dao.Incluir(novoPost);
+                return RedirectToAction("Index");
+            }
+            return View("Novo", novoPost);
         }
-        
+
         public ViewResult Novo()
         {
-            return View();
+            return View(new Post());
         }
 
         [HttpPost]
         public IActionResult Altera(Post post)
         {
-            dao.Alterar(post);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                dao.Alterar(post);
+                return RedirectToAction("Index");
+            }
+            return View("Editar", post);
         }
 
         public IActionResult Editar(int id)

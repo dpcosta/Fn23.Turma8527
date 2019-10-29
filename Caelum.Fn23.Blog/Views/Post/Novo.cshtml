@@ -1,4 +1,5 @@
-﻿
+﻿@model Caelum.Fn23.Blog.Models.Post
+
 @{
     ViewData["Title"] = "Novo";
 }
@@ -7,15 +8,22 @@
 <form action="/Post/Adiciona" method="POST">
     <div>
         <label>Título: </label>
-        <input name="titulo" />
+        <input name="titulo" value="@Model.Titulo" />
+        @Html.ValidationMessage("Titulo")
     </div>
     <div>
         <label>Resumo: </label>
-        <input name="resumo" />
+        <input name="resumo" value="@Model.Resumo" />
+        @Html.ValidationMessageFor(p => p.Resumo)
     </div>
     <div>
         <label>Categoria: </label>
-        <input name="Categoria" />
+        <input name="Categoria" value="@Model.Categoria" />
+        @Html.ValidationMessageFor(p => p.Categoria)
     </div>
     <button>Gravar</button>
 </form>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

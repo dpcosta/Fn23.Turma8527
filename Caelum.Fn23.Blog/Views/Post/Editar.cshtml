@@ -12,14 +12,17 @@
     <div>
         <label>Título: </label>
         <input name="titulo" value="@Model.Titulo" />
+        @Html.ValidationMessageFor(p => p.Titulo)
     </div>
     <div>
         <label>Resumo: </label>
         <input name="resumo" value="@Model.Resumo" />
+        @Html.ValidationMessageFor(p => p.Resumo)
     </div>
     <div>
         <label>Categoria: </label>
         <input name="Categoria" value="@Model.Categoria" />
+        @Html.ValidationMessageFor(p => p.Categoria)
     </div>
     <button>Gravar</button>
 </form>
