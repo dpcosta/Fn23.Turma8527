@@ -24,6 +24,12 @@ namespace Caelum.Fn23.Blog.Controllers
             return View(postsPublicados);
         }
 
+        public IActionResult Busca(string termo)
+        {
+            var postsEncontrados = dao.Todos.Where(p => p.Publicado && p.Titulo.ToUpper().Contains(termo.ToUpper())).ToList();
+            return View("Index", postsEncontrados);
+        }
+
         public IActionResult Privacy()
         {
             return View();

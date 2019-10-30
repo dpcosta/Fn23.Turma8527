@@ -1,5 +1,13 @@
 ﻿@model IEnumerable<Post>
 
+@if (Context.Request.Query.ContainsKey("termo"))
+{
+    <div>
+        Você buscou pelo termo @Context.Request.Query.First(k => k.Key == "termo").Value.First()
+    </div>
+}
+
+
 @foreach (var post in Model)
 {
     <article>
