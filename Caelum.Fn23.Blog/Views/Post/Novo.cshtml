@@ -5,25 +5,28 @@
 }
 
 <h1>Novo Post</h1>
+
 <form action="/Post/Adiciona" method="POST">
-    <div>
-        <label>Título: </label>
-        <input name="titulo" value="@Model.Titulo" />
-        @Html.ValidationMessage("Titulo")
-    </div>
-    <div>
-        <label>Resumo: </label>
-        <input name="resumo" value="@Model.Resumo" />
-        @Html.ValidationMessageFor(p => p.Resumo)
-    </div>
-    <div>
-        <label>Categoria: </label>
-        <input name="Categoria" value="@Model.Categoria" />
-        @Html.ValidationMessageFor(p => p.Categoria)
-    </div>
+
+    @Html.EditorForModel()
+
     <button>Gravar</button>
 </form>
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+<script>
+    $('input[name="Categoria"]').autocomplete({
+        minLength: 3,
+        // source: ['Bananas', 'Laranjas', 'Maçãs', 'Abacaxis', 'Abacates']
+        source: (request, response) => {
+            $.get(
+                '/Post/CategoriaAutocomplete',
+                { termoDigitado: request.term },
+                response,
+            )
+        }
+    });
+</script>

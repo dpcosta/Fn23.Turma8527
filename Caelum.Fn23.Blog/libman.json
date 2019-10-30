@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@3.4.1",
+      "files": [
+        "jquery.js",
+      ],
+      "destination": "wwwroot/lib/jquery/dist/"
+    },
+    {
+      "library": "jquery-validate@1.19.1",
+      "files": [
+        "additional-methods.js",
+        "jquery.validate.js"
+      ],
+      "destination": "wwwroot/lib/jquery-validation/dist/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "files": [
+        "jquery.validate.unobtrusive.js"
+      ],
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "jqueryui@1.12.1",
+      "files": [
+        "jquery-ui.js",
+        "jquery-ui.css"
+      ],
+      "destination": "wwwroot/lib/jquery-ui/dist/"
+    }
+  ]
+}

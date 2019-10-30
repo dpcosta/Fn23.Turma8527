@@ -6,23 +6,14 @@
 
 <h1>Editar Post</h1>
 <form action="/Post/Altera" method="POST">
-    <input type="hidden" name="id" value="@Model.Id" />
-    <input type="hidden" name="DataPublicacao" value="@Model.DataPublicacao" />
-    <input type="hidden" name="Publicado" value="@Model.Publicado.ToString()" />
-    <div>
-        <label>Título: </label>
-        <input name="titulo" value="@Model.Titulo" />
-        @Html.ValidationMessageFor(p => p.Titulo)
-    </div>
-    <div>
-        <label>Resumo: </label>
-        <input name="resumo" value="@Model.Resumo" />
-        @Html.ValidationMessageFor(p => p.Resumo)
-    </div>
-    <div>
-        <label>Categoria: </label>
-        <input name="Categoria" value="@Model.Categoria" />
-        @Html.ValidationMessageFor(p => p.Categoria)
-    </div>
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="DataPublicacao" />
+    <input type="hidden" asp-for="Publicado" />
+    @Html.EditorForModel()
     <button>Gravar</button>
 </form>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script src="~/lib/jquery-ui/jquery-ui.min.js"></script>

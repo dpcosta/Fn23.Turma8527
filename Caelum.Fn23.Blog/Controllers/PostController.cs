@@ -2,6 +2,7 @@
 using Caelum.Fn23.Blog.Models;
 using Caelum.Fn23.Blog.DAL;
 using System;
+using System.Linq;
 
 namespace Caelum.Fn23.Blog.Controllers
 {
@@ -65,6 +66,14 @@ namespace Caelum.Fn23.Blog.Controllers
         {
             dao.Excluir(post);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult CategoriaAutocomplete(string termoDigitado)
+        {
+            return Ok(dao.Todos
+                .Select(p => p.Categoria)
+                .Distinct()
+                .Where(c => c.ToUpper().Contains(termoDigitado.ToUpper())));
         }
     }
 }
