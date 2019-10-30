@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Post>
+
+
+<h2>Posts cadastrados</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Título</th>
+        <th>Resumo</th>
+        <th>Categoria</th>
+        <th>Publicado?</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (Post post in Model)
+    {
+        <tr>
+            <td>
+                <!-- /Admin/Post/Visualiza/Id -->
+                <a asp-area="Admin" asp-action="Editar" asp-route-id="@post.Id">
+                    @post.Titulo
+                </a>
+            </td>
+            <td>@post.Resumo</td>
+            <td>
+                <!-- /Admin/Post/Categoria/{categoria} -->
+                <a asp-area="Admin" asp-action="Categoria" asp-route-id="@post.Categoria">
+                    @post.Categoria
+                </a>
+            </td>
+            <td>
+                @if (post.Publicado)
+                {
+                    <span>
+                        @post.DataPublicacao.Value.ToString("dd/MM/yyyy")
+                    </span>
+                }
+                else
+                {
+                    <!-- /Admin/Post/Publica/{id} -->
+                    <a asp-area="Admin" asp-action="Publica" asp-route-id="@post.Id">
+                        <span class="glyphicon glyphicon-check"></span>
+                    </a>
+                }
+            </td>
+            <td>
+                <!-- /Admin/Post/Remove/{id} -->
+                <a asp-area="Admin" asp-action="Remove" asp-route-id="@post.Id">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

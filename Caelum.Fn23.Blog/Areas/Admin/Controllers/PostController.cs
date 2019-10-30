@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace Caelum.Fn23.Blog.Controllers
 {
+    [Area("Admin")]
     public class PostController : Controller
     {
         IPostDAO dao;

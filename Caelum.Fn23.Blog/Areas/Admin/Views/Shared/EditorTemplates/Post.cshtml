@@ -1,16 +1,16 @@
 ﻿@model Caelum.Fn23.Blog.Models.Post
-<div>
+<div class="input-group">
     <label asp-for="Titulo"></label>
-    <input asp-for="Titulo" />
+    <input asp-for="Titulo" class="form-control" />
     @Html.ValidationMessage("Titulo")
 </div>
-<div>
+<div class="input-group">
     <label>Resumo: </label>
-    <input asp-for="Resumo" />
+    <textarea asp-for="Resumo" class="form-control" rows="6"></textarea>
     @Html.ValidationMessageFor(p => p.Resumo)
 </div>
-<div>
+<div class="input-group">
     <label>Categoria: </label>
-    <input asp-for="Categoria" autocomplete="off" />
+    <input asp-for="Categoria" autocomplete="off" class="form-control" />
     @Html.ValidationMessageFor(p => p.Categoria)
 </div>

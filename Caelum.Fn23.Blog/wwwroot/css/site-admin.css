@@ -1,0 +1,16 @@
+﻿body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+aside {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}

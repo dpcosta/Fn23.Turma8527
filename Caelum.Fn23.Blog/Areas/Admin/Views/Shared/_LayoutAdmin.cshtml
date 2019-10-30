@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog Resenha Cultural - Admin</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site-admin.css" rel="stylesheet" />
+</head>
+<body>
+    <partial name="MenuAdmin" />
+    <main>
+        @RenderBody()
+    </main>
+    @RenderSection("Scripts", false)
+</body>
+</html>
