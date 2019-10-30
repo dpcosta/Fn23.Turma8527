@@ -1,56 +1,70 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+header {
+    background: url(https://picsum.photos/2400/400?image=120);
+    box-shadow: 0px 5px 5px gray;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    header .jumbotron {
+        padding: 20px;
+        background: inherit;
+        color: white;
+    }
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+article {
+    grid-column: 1/1;
+    background-color: #eee;
+    border: 1px solid lightgray;
+    border-left: 4px solid gray;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    border-radius: 0 5px 0 0;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    article:hover {
+        box-shadow: 0 2px 5px gray;
+    }
+
+aside {
+    grid-row: 1/end;
+    grid-column: 2/2;
+    background-color: lightgray;
+    padding: 0 20px;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+/* Login */
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px gray;
 }

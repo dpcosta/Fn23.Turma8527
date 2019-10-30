@@ -1,8 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Post>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach (var post in Model)
+{
+    <article>
+        <h2>@post.Titulo</h2>
+        <p>@post.Resumo</p>
+        <p>Publicado em @post.DataPublicacao.Value.ToString("dd/MM/yyyy")</p>
+    </article>
+}

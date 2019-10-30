@@ -5,14 +5,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Caelum.Fn23.Blog.Models;
+using Caelum.Fn23.Blog.DAL;
 
 namespace Caelum.Fn23.Blog.Controllers
 {
     public class HomeController : Controller
     {
+        IPostDAO dao;
+
+        public HomeController(IPostDAO dao)
+        {
+            this.dao = dao;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var postsPublicados = dao.Todos.Where(p => p.Publicado).ToList();
+            return View(postsPublicados);
         }
 
         public IActionResult Privacy()
