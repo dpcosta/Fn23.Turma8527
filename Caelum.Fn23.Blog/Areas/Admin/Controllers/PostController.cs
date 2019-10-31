@@ -3,10 +3,12 @@ using Caelum.Fn23.Blog.Models;
 using Caelum.Fn23.Blog.DAL;
 using System;
 using System.Linq;
+using Caelum.Fn23.Blog.Filtros;
 
 namespace Caelum.Fn23.Blog.Controllers
 {
     [Area("Admin")]
+    [AutorizacaoFilter]
     public class PostController : Controller
     {
         IPostDAO dao;

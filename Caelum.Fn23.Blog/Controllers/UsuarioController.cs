@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Caelum.Fn23.Blog.DAL;
 using Caelum.Fn23.Blog.Models;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +19,12 @@ namespace Caelum.Fn23.Blog.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("usuario");
+            return RedirectToAction("Login");
         }
 
         public IActionResult Autentica(LoginViewModel model)

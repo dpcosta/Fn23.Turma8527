@@ -1,11 +1,21 @@
-﻿<aside>
+﻿@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+@{ 
+    var usuarioJson = Context.Session.GetString("usuario");
+    var usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+}
+<aside>
     <h1>Administração</h1>
+    <p>Bem vindo, @usuario.Nome!</p>
     <ul>
         <li>
             <a asp-area="Admin" asp-controller="Post" asp-action="Index">Posts</a>
         </li>
         <li>
             <a asp-area="" asp-controller="Home" asp-action="Index">Área Pública</a>
+        </li>
+        <li>
+            <a asp-area="" asp-controller="Usuario" asp-action="Logout">Logout</a>
         </li>
     </ul>
 </aside>
