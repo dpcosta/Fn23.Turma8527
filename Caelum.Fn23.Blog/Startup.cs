@@ -36,6 +36,7 @@ namespace Caelum.Fn23.Blog
             });
 
             services.AddScoped<IPostDAO, PostDAO>();
+            services.AddScoped<IUsuarioDAO, UsuarioDAO>();
             services.AddDbContext<BlogContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("BlogDB")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
