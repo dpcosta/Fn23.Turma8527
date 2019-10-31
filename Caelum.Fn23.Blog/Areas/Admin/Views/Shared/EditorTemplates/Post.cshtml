@@ -1,15 +1,15 @@
 ﻿@model Caelum.Fn23.Blog.Models.Post
-<div class="input-group">
+<div class="form-group">
     <label asp-for="Titulo"></label>
     <input asp-for="Titulo" class="form-control" />
     @Html.ValidationMessage("Titulo")
 </div>
-<div class="input-group">
+<div class="form-group">
     <label>Resumo: </label>
     <textarea asp-for="Resumo" class="form-control" rows="6"></textarea>
     @Html.ValidationMessageFor(p => p.Resumo)
 </div>
-<div class="input-group">
+<div class="form-group">
     <label>Categoria: </label>
     <input asp-for="Categoria" autocomplete="off" class="form-control" />
     @Html.ValidationMessageFor(p => p.Categoria)
