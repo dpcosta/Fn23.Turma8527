@@ -39,6 +39,7 @@ namespace Caelum.Fn23.Blog
             services.AddScoped<IUsuarioDAO, UsuarioDAO>();
             services.AddDbContext<BlogContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("BlogDB")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +56,8 @@ namespace Caelum.Fn23.Blog
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

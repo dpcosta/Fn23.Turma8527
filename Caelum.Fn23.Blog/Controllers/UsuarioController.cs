@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Caelum.Fn23.Blog.DAL;
 using Caelum.Fn23.Blog.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Caelum.Fn23.Blog.Controllers
 {
@@ -30,6 +32,7 @@ namespace Caelum.Fn23.Blog.Controllers
                 if (usuario != null)
                 {
                     // colocar na sessão
+                    HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuario));
                     return RedirectToAction("Index", new { Controller = "Post", Area = "Admin" });
                 }
                 ModelState.AddModelError("usuarioNaoEncontrado", "Usuário não encontrado");
