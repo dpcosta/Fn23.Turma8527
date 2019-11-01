@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Usuario>
+
+@{ 
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Usuários cadastrados</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (Usuario usuario in Model)
+    {
+        <tr>
+            <td>@usuario.Nome</td>
+            <td>@usuario.Email</td>
+            <td>
+                <a asp-area="" asp-controller="Usuario" asp-action="Excluir" asp-route-id="@usuario.Id">
+                    Excluir
+                </a>
+            </td>
+        </tr>
+    }
+</table>

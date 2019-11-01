@@ -1,0 +1,34 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Novo Usuário</h1>
+
+<form asp-controller="Usuario" asp-action="Adiciona" asp-area="" method="POST">
+
+    <div class="form-group">
+        <label asp-for="Login"></label>
+        <input asp-for="Login" class="form-control" />
+        <span asp-validation-for="Login"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Senha"></label>
+        <input asp-for="Senha" class="form-control" />
+        <span asp-validation-for="Senha"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmacaoSenha"></label>
+        <input asp-for="ConfirmacaoSenha" class="form-control" />
+        <span asp-validation-for="ConfirmacaoSenha"></span>
+    </div>
+
+    <button class="btn btn-primary">Gravar</button>
+</form>
