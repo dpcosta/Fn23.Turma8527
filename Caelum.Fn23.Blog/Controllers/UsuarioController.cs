@@ -16,6 +16,7 @@ namespace Caelum.Fn23.Blog.Controllers
             this.dao = dao;
         }
 
+        [Route("login")]
         public IActionResult Login()
         {
             return View();
@@ -26,7 +27,7 @@ namespace Caelum.Fn23.Blog.Controllers
             HttpContext.Session.Remove("usuario");
             return RedirectToAction("Login");
         }
-
+        [Route("autentica")]
         public IActionResult Autentica(LoginViewModel model)
         {
             if (ModelState.IsValid)
