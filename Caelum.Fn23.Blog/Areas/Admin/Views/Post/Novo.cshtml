@@ -13,20 +13,22 @@
     <button class="btn btn-primary">Gravar</button>
 </form>
 
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-<script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
-<script>
-    $('input[name="Categoria"]').autocomplete({
-        minLength: 3,
-        // source: ['Bananas', 'Laranjas', 'Maçãs', 'Abacaxis', 'Abacates']
-        source: (request, response) => {
-            $.get(
-                '/Post/CategoriaAutocomplete',
-                { termoDigitado: request.term },
-                response,
-            )
-        }
-    });
-</script>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+        $('input[name="Categoria"]').autocomplete({
+            minLength: 3,
+            // source: ['Bananas', 'Laranjas', 'Maçãs', 'Abacaxis', 'Abacates']
+            source: (request, response) => {
+                $.get(
+                    '/Admin/Post/CategoriaAutocomplete',
+                    { termoDigitado: request.term },
+                    response,
+                )
+            }
+        });
+    </script>
+}
