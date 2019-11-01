@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Caelum.Fn23.Blog.Models
 {
@@ -14,5 +15,7 @@ namespace Caelum.Fn23.Blog.Models
         
         [Required]
         public string Senha { get; set; }
+
+        public IEnumerable<Post> Posts { get; set; }
     }
 }

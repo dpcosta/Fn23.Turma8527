@@ -8,7 +8,7 @@ namespace Caelum.Fn23.Blog.DAL
 {
     public class BaseDAO<T> where T: class
     {
-        BlogContext context;
+        protected BlogContext context;
 
         public BaseDAO(BlogContext context)
         {
@@ -37,6 +37,6 @@ namespace Caelum.Fn23.Blog.DAL
             context.SaveChanges();
         }
 
-        public IEnumerable<T> Todos => context.Set<T>();
+        public virtual IEnumerable<T> Todos => context.Set<T>();
     }
 }

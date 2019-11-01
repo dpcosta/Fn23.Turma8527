@@ -4,6 +4,7 @@ using Caelum.Fn23.Blog.DAL;
 using System;
 using System.Linq;
 using Caelum.Fn23.Blog.Filtros;
+using Caelum.Fn23.Blog.Extensions;
 
 namespace Caelum.Fn23.Blog.Controllers
 {
@@ -28,6 +29,7 @@ namespace Caelum.Fn23.Blog.Controllers
         {
             if (ModelState.IsValid)
             {
+                novoPost.Autor = HttpContext.Session.Get<Usuario>("usuario");
                 dao.Incluir(novoPost);
                 return RedirectToAction("Index");
             }
@@ -44,6 +46,7 @@ namespace Caelum.Fn23.Blog.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.Autor = HttpContext.Session.Get<Usuario>("usuario");
                 dao.Alterar(post);
                 return RedirectToAction("Index");
             }

@@ -8,6 +8,7 @@
         <th>Título</th>
         <th>Resumo</th>
         <th>Categoria</th>
+        <th>Autor</th>
         <th>Publicado?</th>
         <th>Ações</th>
     </tr>
@@ -15,18 +16,17 @@
     {
         <tr>
             <td>
-                <!-- /Admin/Post/Visualiza/Id -->
                 <a asp-area="Admin" asp-action="Editar" asp-route-id="@post.Id">
                     @post.Titulo
                 </a>
             </td>
             <td>@post.Resumo</td>
             <td>
-                <!-- /Admin/Post/Categoria/{categoria} -->
-                <a asp-area="Admin" asp-action="Categoria" asp-route-id="@post.Categoria">
+                <a asp-area="Admin" asp-controller="Post" asp-action="Categoria" asp-route-id="@post.Categoria">
                     @post.Categoria
                 </a>
             </td>
+            <td>@post.Autor?.Nome</td>
             <td>
                 @if (post.Publicado)
                 {
@@ -36,16 +36,14 @@
                 }
                 else
                 {
-                    <!-- /Admin/Post/Publica/{id} -->
-                    <a asp-area="Admin" asp-action="Publica" asp-route-id="@post.Id">
-                        <span class="glyphicon glyphicon-check"></span>
+                    <a asp-area="Admin" asp-controller="Post" asp-action="Publicar" asp-route-id="@post.Id">
+                        Publicar
                     </a>
                 }
             </td>
             <td>
-                <!-- /Admin/Post/Remove/{id} -->
-                <a asp-area="Admin" asp-action="Remove" asp-route-id="@post.Id">
-                    <span class="glyphicon glyphicon-remove"></span>
+                <a asp-area="Admin" asp-action="Excluir" asp-route-id="@post.Id">
+                    Excluir
                 </a>
             </td>
         </tr>
