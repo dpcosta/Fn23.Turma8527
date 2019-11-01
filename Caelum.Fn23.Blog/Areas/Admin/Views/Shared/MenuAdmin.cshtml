@@ -1,8 +1,6 @@
-﻿@using Microsoft.AspNetCore.Http;
-@using Newtonsoft.Json;
+﻿@using Caelum.Fn23.Blog.Extensions;
 @{ 
-    var usuarioJson = Context.Session.GetString("usuario");
-    var usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+    var usuario = Context.Session.Get<Usuario>("usuario");
 }
 <aside>
     <h1>Administração</h1>
